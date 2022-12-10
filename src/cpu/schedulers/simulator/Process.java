@@ -14,10 +14,10 @@ public class Process {
     
     String ProcessName;
     int ProcessArivalTime;
-    int ExecutionTime;//(brust)
+    public int ExecutionTime;//(brust)
     int WaitingTime;
     int TurnaroundTime; 
-    int CompletionTime;
+    public int CompletionTime;
     int ProcessPriority;//for Priority Scheduling
     
     public static int Burst;
@@ -145,6 +145,13 @@ public class Process {
                 '}';
     }
 
+    public int turnaroundtime() {
+		return (this.CompletionTime - this.ProcessArivalTime);
+    }
+    public int waitingtime() {
+	return (this.CompletionTime - this.Burst - this.ProcessArivalTime);
+		
+    }
     
    
 }

@@ -29,6 +29,7 @@ public class AG {
 		process.add(p3);
 		Process p4 = new Process("P4" , 4 , 15 , 6 , 6);
 		process.add(p4);
+                Current = get_first_process(); 
 	}
 	
 	public Process get_first_process() {
@@ -243,15 +244,15 @@ public class AG {
 	}
 	public void Calc_WaitingTime() {
 		for(Process i : process) {
-		     System.out.println("Waiting Time of " + i.getProcessName() + " is : " + i.getWaitingTime());
-		     sum_Waitingtime+=i.getWaitingTime();
+		     System.out.println("Waiting Time of " + i.getProcessName() + " is : " + i.waitingtime());
+		     sum_Waitingtime+=i.waitingtime();
 		}
 	}
 	
 	public void Calc_TurnTime() {
 		for(Process i : process) {
-		     System.out.println("TurnAround Time of " + i.getProcessName() + " is : " + i.getTurnaroundTime());
-		     sum_Turnaroundtime+=i.getTurnaroundTime();
+		     System.out.println("TurnAround Time of " + i.getProcessName() + " is : " + i.turnaroundtime());
+		     sum_Turnaroundtime+=i.turnaroundtime();
 		}
 	}
 }
