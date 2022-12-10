@@ -20,6 +20,9 @@ public class Process {
     int CompletionTime;
     int ProcessPriority;//for Priority Scheduling
     
+    public static int Burst;
+    public int Quantm;
+    public int RQ; 
     
     Process() {
         
@@ -53,7 +56,16 @@ public class Process {
         CompletionTime = 0;
     }
 
-    
+    //for AG
+    Process(String name , int BurstTime , int ArrivalTime , int p ,  int Q){
+	this.ProcessName  = name ;
+	this.ExecutionTime = BurstTime;
+	this.ProcessArivalTime =  ArrivalTime;
+	this.ProcessPriority = p;
+	this.Quantm = Q;
+	this.RQ = Q;
+	Process.Burst = BurstTime;
+    }
 
     
     //Getters and Setters
