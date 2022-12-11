@@ -16,11 +16,18 @@ import java.util.ArrayList;
 public class sjfScheduling {
     ArrayList<Process> processList = new ArrayList<>();
     public sjfScheduling(){
-        processList.add(new Process("P1", 2, 6, 1));
-        processList.add(new Process("P2", 5, 2, 1));
-        processList.add(new Process("P3", 1, 8, 1));
-	processList.add(new Process("P4", 0, 3, 1));
-	processList.add(new Process("P5", 4, 4, 1));
+//         processList.add(new Process("P1", 2, 6, 1));
+//         processList.add(new Process("P2", 5, 2, 1));
+//         processList.add(new Process("P3", 1, 8, 1));
+// 	processList.add(new Process("P4", 0, 3, 1));
+// 	processList.add(new Process("P5", 4, 4, 1));
+    System.out.println("Enter the number of processes:");
+    int pNum = Integer.valueOf(s.nextLine());
+    for(int i=0; i<pNum;i++) {
+	System.out.println("Enter Arrival time/ burst time");
+	input = s.nextLine();
+   	processList.add(new Process("P"+(i+1), Integer.valueOf(input.split("\\s")[1]), Integer.valueOf(input.split("\\s")[0]), 1));
+    }
     	int context;
 	System.out.println("Enter value of context switching");
 	input = s.nextLine();
