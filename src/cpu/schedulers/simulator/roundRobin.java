@@ -22,13 +22,16 @@ public class roundRobin {
         processList.add(new Process("P3", 1, 8, 1));
 	processList.add(new Process("P4", 0, 3, 1));
 	processList.add(new Process("P5", 4, 4, 1));
-        int quantum;
+        int quantum, context;
 	System.out.println("Enter quantum:");
 	quantum = input.nextInt();
-        roundRobin(processList, quantum);
+	System.out.println("Enter value of context switching");
+	input = s.nextLine();
+	context = Integer.valueOf(input);
+        roundRobin(processList, quantum, context);
 
     }
-    public static void roundRobin(ArrayList<Process> processList, int quantum) {
+    public static void roundRobin(ArrayList<Process> processList, int quantum, int context) {
 	System.out.println("##############  Round Robin Scheduling  ##############");
 
 	ArrayList<Process> copyProcessList = new ArrayList<>();
@@ -79,6 +82,9 @@ public class roundRobin {
 		}
 				
 		counter = quantum;
+		if(index!=readyQueue.peek()) {
+			i += context;
+		}
                 index = readyQueue.poll();
                 System.out.println("Process "+copyProcessList.get(index).getProcessName()+" is being excuted.");
             }
