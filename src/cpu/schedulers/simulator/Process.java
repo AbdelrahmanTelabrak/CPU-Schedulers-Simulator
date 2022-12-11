@@ -20,7 +20,7 @@ public class Process {
     public int CompletionTime;
     int ProcessPriority;//for Priority Scheduling
     
-    public static int Burst;
+    public int Burst;
     public int Quantm;
     public int RQ; 
     
@@ -64,7 +64,7 @@ public class Process {
 	this.ProcessPriority = p;
 	this.Quantm = Q;
 	this.RQ = Q;
-	Process.Burst = BurstTime;
+	this.Burst = BurstTime;
     }
 
     

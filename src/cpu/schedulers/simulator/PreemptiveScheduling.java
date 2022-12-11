@@ -80,8 +80,7 @@ public class PreemptiveScheduling {
                         currentTime += process.getExecutionTime();
                         out = currentTime;
                         gantt.add(new GanttRecord(in, out, process.getProcessId()));
-                        //kontrollohet nese ne fund te ekzekutimit pa nderprerje te nje procesi kemi nje proces te ri qe
-                        //vjen dhe shtohet ne radhen gati
+                        
                         if(orderedByArrivingTime.size() > 0
                                 && readyQueue.isEmpty()) {
                             readyQueue.enqueue(orderedByArrivingTime.get(0));
@@ -89,7 +88,7 @@ public class PreemptiveScheduling {
                     }
                 }
             }
-            //rasti tjeter kur nuk kemi me procese te reja qe vijojne por trajtohen vetem ato qe ndodhen ne radhen gati
+            
             else{
                 in = currentTime;
                 currentTime += process.getExecutionTime();
