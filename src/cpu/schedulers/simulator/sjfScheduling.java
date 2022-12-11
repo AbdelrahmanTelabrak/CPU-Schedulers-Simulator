@@ -21,11 +21,15 @@ public class sjfScheduling {
         processList.add(new Process("P3", 1, 8, 1));
 	processList.add(new Process("P4", 0, 3, 1));
 	processList.add(new Process("P5", 4, 4, 1));
-        sjfScheduling(processList);
+    	int context;
+	System.out.println("Enter value of context switching");
+	input = s.nextLine();
+	context = Integer.valueOf(input);
+        sjfScheduling(processList, context);
     }
     
     
-    public static void sjfScheduling(ArrayList<Process> processList) {
+    public static void sjfScheduling(ArrayList<Process> processList, int context) {
         System.out.println("##############  SJF Scheduling  ##############");
 	ArrayList<Process> copyProcessList = new ArrayList<>();
 
@@ -47,7 +51,7 @@ public class sjfScheduling {
 
             if(index!=-1) {
 		if(index != findMinProcess(copyProcessList, i)) {
-					
+		    i += context;
                     index = findMinProcess(copyProcessList, i);
                     System.out.println("Process "+copyProcessList.get(index).getProcessName()+" is being excuted.");
 		}
