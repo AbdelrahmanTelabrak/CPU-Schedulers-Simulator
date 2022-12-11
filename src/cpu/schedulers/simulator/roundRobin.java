@@ -17,11 +17,13 @@ public class roundRobin {
     Scanner input = new Scanner(System.in);
     ArrayList<Process> processList = new ArrayList<>();
     public roundRobin(){
-        processList.add(new Process("P1", 2, 6, 1));
-        processList.add(new Process("P2", 5, 2, 1));
-        processList.add(new Process("P3", 1, 8, 1));
-	processList.add(new Process("P4", 0, 3, 1));
-	processList.add(new Process("P5", 4, 4, 1));
+	System.out.println("Enter the number of processes:");
+	int pNum = Integer.valueOf(s.nextLine());
+	for(int i=0; i<pNum;i++) {
+		System.out.println("Enter Arrival time/ burst time");
+		input = s.nextLine();
+		processList.add(new Process("P"+(i+1), Integer.valueOf(input.split("\\s")[1]), Integer.valueOf(input.split("\\s")[0]), 1));
+	}
         int quantum, context;
 	System.out.println("Enter quantum:");
 	quantum = input.nextInt();
